@@ -8,10 +8,11 @@ Website resmi layanan **Jasa Service AC Profesional, Murah, dan Terpercaya di Ar
 
 ## 📌 Fitur Utama
 
-- 📱 **Responsive Design**: Tampilan optimal di HP, tablet, maupun laptop/PC.
+- 📱 **Responsive & Interactive**: Tampilan optimal di HP maupun PC dengan navigasi menu mobile dan smooth scroll.
+- ❓ **Smart FAQ Accordion**: Fitur tanya-jawab interaktif yang menyesuaikan tampilan layar (1 item aktif di HP, independen per kolom di PC).
 - 💬 **Integrasi WhatsApp**: Tombol konsultasi & pemesanan langsung terhubung ke WhatsApp Admin.
-- 🔍 **SEO Optimized**: Dilengkapi dengan `sitemap.xml` dan `robots.txt` agar mudah ditemukan di pencarian Google.
-- ⚡ **Ringan & Cepat**: Dibangun menggunakan kombinasi HTML, CSS, dan JavaScript murni tanpa framework berat.
+- 🔍 **SEO Optimized**: Dilengkapi dengan `sitemap.xml`, `robots.txt`, Open Graph, dan *Schema.org Structured Data* agar mudah ditemukan di Google.
+- ⚡ **Ringan & Cepat**: Dibangun menggunakan HTML, CSS, dan JavaScript murni (*Vanilla JS*) tanpa framework berat.
 
 ---
 
@@ -29,10 +30,13 @@ Website resmi layanan **Jasa Service AC Profesional, Murah, dan Terpercaya di Ar
 
 ```text
 .
-├── favicon.ico                   # Icon website (browser tab)
-├── index.html                    # Halaman utama website
-├── layanan-service-ac-jogja.jpg   # Gambar banner/layanan utama
-├── robots.txt                    # Konfigurasi arahan untuk crawler mesin pencari
-├── script.js                     # File script JavaScript
-├── sitemap.xml                   # Peta situs untuk Google Search Console
-└── style.css                     # File styling utama (CSS)
+├── assets/
+│   ├── favicon.ico                   # Icon website (browser tab)
+│   ├── layanan-service-ac-jogja.jpg   # Gambar banner/layanan utama
+│   └── service ac jogja.png          # Gambar pendukung
+├── index.html                        # Halaman utama website
+├── README.md                         # Dokumentasi proyek
+├── robots.txt                        # Konfigurasi arahan crawler mesin pencari
+├── script.js                         # File logika & interaktivitas (JS)
+├── sitemap.xml                       # Peta situs untuk Google Search Console
+└── style.css                         # File styling utama (CSS)
