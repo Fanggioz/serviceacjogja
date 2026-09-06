@@ -131,3 +131,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       }
     });
   });
+// Lazy Loading Gambar + Efek Fade-In
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll("img[data-src]");
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const image = entry.target;
+        image.src = image.dataset.src;
+        image.classList.add("fade-in");
+        observer.unobserve(image);
+      }
+    });
+  });
+
+  lazyImages.forEach((img) => imageObserver.observe(img));
+});
