@@ -39,25 +39,43 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   counterElements.forEach((counter) => observer.observe(counter));
 
-  // Accordion FAQ
+  // Accordion FAQ 
   const faqColumns = document.querySelectorAll(".faq-column");
-  faqColumns.forEach((column) => {
-    const items = column.querySelectorAll(".faq-item");
-    items.forEach((item) => {
-      const question = item.querySelector(".faq-question");
-      const wrapper = item.querySelector(".faq-answer-wrapper");
+  const allFaqItems = document.querySelectorAll(".faq-item");
+
+  allFaqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const wrapper = item.querySelector(".faq-answer-wrapper");
+
+    if (question && wrapper) {
       question.addEventListener("click", function () {
         const isActive = item.classList.contains("active");
-        items.forEach((otherItem) => {
-          otherItem.classList.remove("active");
-          otherItem.querySelector(".faq-answer-wrapper").style.maxHeight = null;
-        });
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+          allFaqItems.forEach((otherItem) => {
+            otherItem.classList.remove("active");
+            const otherWrapper = otherItem.querySelector(".faq-answer-wrapper");
+            if (otherWrapper) otherWrapper.style.maxHeight = null;
+          });
+        } else {
+
+          const parentColumn = item.closest(".faq-column");
+          if (parentColumn) {
+            parentColumn.querySelectorAll(".faq-item").forEach((otherItem) => {
+              otherItem.classList.remove("active");
+              const otherWrapper = otherItem.querySelector(".faq-answer-wrapper");
+              if (otherWrapper) otherWrapper.style.maxHeight = null;
+            });
+          }
+        }
+
         if (!isActive) {
           item.classList.add("active");
           wrapper.style.maxHeight = wrapper.scrollHeight + "px";
         }
       });
-    });
+    }
   });
 
   // Toggle menu mobile
